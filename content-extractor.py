@@ -6,15 +6,23 @@ import hashlib                                                                  
 import re                                                                                                       #Library for regex 
 from bs4 import BeautifulSoup                                                                                   #Library for parsing HTML
 from boilerpy3 import extractors                                                                                #Library for boilerplate removal and content extraction
-#
-#
-#
-#DO NOT FORGET TO CD TO HW2 BEFORE RUNNING
-#
-#
-#
+import sys                                                                                                      #Library for accessing command-line arguments
+
+#Run the command py.exe content-extractor.py <link_list_file>
+
 #Start of main
 if __name__ == "__main__":
+
+#Handle command-line argument
+    if len(sys.argv) < 2:                                                                                       #Check if user provided a filename as a command-line argument
+        print("Usage: py content-extractor.py <link_list_file>")                                                #If not, print correct usage format
+        sys.exit(1)                                                                                             #Exit program since no file was provided
+
+    linksFilePath = sys.argv[1]                                                                                 #Assigns the first command-line argument to variable 'linksFilePath'
+
+    if not os.path.isfile(linksFilePath):                                                                       #Check if the provided file exists
+        print(f"Error: File '{linksFilePath}' not found.")                                                      #Print error if file does not exist
+        sys.exit(1)                                                                                             #Exit program since file path is invalid
 
 #Variable Declarations
     URIList = set()                                                                                             #Set that contains all URIs that will be downloaded
@@ -29,7 +37,7 @@ if __name__ == "__main__":
     os.makedirs(ProcessedDirectory, exist_ok=True)                                                              #Generates processed files directory
 
 #Grab links from the input file
-    with open("LinkListHW2.txt", "r", encoding="utf-8") as GrabbedLinksFile:                                    #Open the file that contains the links
+    with open(linksFilePath, "r", encoding="utf-8") as GrabbedLinksFile:                                        #Open the file that contains the links
         for URI in GrabbedLinksFile:                                                                            #Loop through each line of the file
             URIList.add(URI.strip())                                                                            #Strip whitespace/newlines and add URi to the set
     print("Links Acquired!")                                                                                    #Print confirmation when done
@@ -120,4 +128,3 @@ if __name__ == "__main__":
     print("Data Extracted.")                                                                                    #Print that data collection is done
     print(f"{len(os.listdir(ProcessedDirectory))} Processed files.")                                            #Print number of files that are left after successful processing
     print("Data for each page has been extracted and can be found inside the 'Processed Files' directory")      #Print final message
-    
