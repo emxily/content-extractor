@@ -4,9 +4,10 @@ import os                                                                       
 import shutil                                                                                                   #Library for file copying and moving
 import hashlib                                                                                                  #Library for hashing
 import re                                                                                                       #Library for regex 
+import sys                                                                                                      #Library for accessing command-line arguments
 from bs4 import BeautifulSoup                                                                                   #Library for parsing HTML
 from boilerpy3 import extractors                                                                                #Library for boilerplate removal and content extraction
-import sys                                                                                                      #Library for accessing command-line arguments
+
 
 #Run the command py.exe content-extractor.py <link_list_file>
 
@@ -50,7 +51,7 @@ if __name__ == "__main__":
         RawPath = os.path.join(RawDirectory, filename)                                                          #Create path for file inside raw files dirtectory
 
         try:                                                                                                    #Try to request the page
-            response = requests.get(URI, timeout=5, allow_redirects=True)                                       #Send HTTP GET request
+            response = requests.get(URI, timeout=10, allow_redirects=True)                                       #Send HTTP GET request
             if response.status_code == 200:                                                                     #If the request succeeded
                 try:                                                                                            #Try to write content to the file 
                     with open(RawPath, "w", encoding="utf-8") as RawFile:                                       #Open file to write
@@ -128,3 +129,4 @@ if __name__ == "__main__":
     print("Data Extracted.")                                                                                    #Print that data collection is done
     print(f"{len(os.listdir(ProcessedDirectory))} Processed files.")                                            #Print number of files that are left after successful processing
     print("Data for each page has been extracted and can be found inside the 'Processed Files' directory")      #Print final message
+  
