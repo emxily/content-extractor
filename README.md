@@ -57,13 +57,40 @@ Before you begin, ensure you have met the following requirements:
 
 * To run the program from the terminal:
 
-        py.exe content-extractor.py <link_list_file>
+        py content-extractor.py testlinks.txt
 
 
 
 ### <u>Example Output</u>
-``` ```
+```py content-extractor.py testlinks.txt```
 ```
+Links Acquired!
+
+Downloading webpages. . .
+
+Saved: https://services.github.com/ as 039473af4d424b6294cb0642b4dbdf55.html
+Saved: https://github.com/ as 008ec4453ff31513f43893cba7aa31c8.html
+Saved: https://docs.github.com/copilot/managing-copilot/configure-personal-settings/installing-the-github-copilot-extension-in-your-environment as 1c90c8cddf22e72a673d9bb5463153e7.html
+Saved: https://github.com/enterprise as ef4bd4b96e95f14a01607838015b86da.html
+Saved: https://www.instagram.com/github/ as 2a1b3d9bf2c63920710fb241b341421f.html
+Saved: https://github.com/customer-stories?type=enterprise as 8f8052a376f09eec76d566d13af6925b.html
+Saved: https://github.com/github as c9df189541785f07c4d2ac331cf9ad46.html
+Saved: https://github.blog/open-source/social-impact/ as 970831fb58b9cd98ffc38901a8e7dd62.html
+Saved: https://www.youtube.com/playlist?list=PL0lo9MOBetEHEHi9h0k_lPn0XZdEeYZDS as 6e4c1eccbba42d86f0e4439a55e7e588.html
+Saved: https://github.blog/news-insights/research/the-state-of-open-source-and-ai/ as 1ccf5df09b90c822a0358f1c183073db.html
+Saved: https://github.blog/author/davelosert/ as 09a457c326e21a1e8c4346241d8a5175.html
+
+Download completed!
+
+Extracting data. . .
+
+Deleted https://www.instagram.com/github/: Dataless.
+Deleted https://www.youtube.com/playlist?list=PL0lo9MOBetEHEHi9h0k_lPn0XZdEeYZDS: Dataless.
+
+Data Extracted.
+
+9 Processed files.
+Data for each page has been extracted and can be found inside the 'Processed Files' directory
 
 ```
 
@@ -76,7 +103,7 @@ Before you begin, ensure you have met the following requirements:
 * This program is currently written as a single main script; I plan to refactor it into custom functions for better readability, reusability, and testing in a future version.
 
 
-<br \>
+<br />
 
 
 # Version History
@@ -106,8 +133,8 @@ Before you begin, ensure you have met the following requirements:
 [Homework 2 - Ranking Webpages - Question 1](https://github.com/emxily/content-extractor/blob/578cd81dd377340e433a4761702072caf881708d/original-assignment-instructions.md)
 
 ### References
-* Markdown Syntax: https://www.markdownguide.org/basic-syntax/#headings
-* HTML Syntax: https://www.w3schools.com/tags
+* Markdown Syntax: <https://www.markdownguide.org/basic-syntax/#headings>
+* HTML Syntax: <https://www.w3schools.com/tags>
 * Python Beautiful Soup Documentation: <https://www.crummy.com/software/BeautifulSoup/bs4/doc>
 * Regex: <https://regex101.com/>
 * Python Dictionary Documentation: <https://www.w3schools.com/python/python_dictionaries.asp>

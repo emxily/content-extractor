@@ -153,7 +153,6 @@ if __name__ == "__main__":
     print("Data Extracted.")                                                                                    #Print that data collection is done
     print()                                                                                                     #Blank Line
     print(f"{len(os.listdir(ProcessedDirectory))} Processed files.")                                            #Print number of files that are left after successful processing
-    print()                                                                                                     #Blank line
     print("Data for each page has been extracted and can be found inside the 'Processed Files' directory")      #Print final message
     print()                                                                                                     #Blank line
   
