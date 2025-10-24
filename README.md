@@ -52,6 +52,7 @@ Before you begin, ensure you have met the following requirements:
 
         cd content-extractor
 
+* A .txt document containing the URIs you want to extract content from with one URI per line.
 
 ## Executing program
 
