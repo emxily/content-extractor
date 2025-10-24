@@ -56,6 +56,7 @@ if __name__ == "__main__":
             URIList.add(URI)                                                                                    #Add URI to the set (deduplicates automatically)
 
     print("Links Acquired!")                                                                                    #Print confirmation when done
+    print()                                                                                                     #Blank line
     print("Downloading webpages. . .")                                                                          #Print that now starts the downloading process
     print()                                                                                                     #Blank Line
 
@@ -85,6 +86,7 @@ if __name__ == "__main__":
             continue                                                                                            #Skip
     print()                                                                                                     #Blank line
     print("Download completed!")                                                                                #Print that the download is done
+    print()                                                                                                     #Blank line
     print("Extracting data. . .")                                                                               #Print now data is being extracted
     print()                                                                                                     #Blank line
 
@@ -149,6 +151,9 @@ if __name__ == "__main__":
 #Final messages
     print()                                                                                                     #Blank line
     print("Data Extracted.")                                                                                    #Print that data collection is done
+    print()                                                                                                     #Blank Line
     print(f"{len(os.listdir(ProcessedDirectory))} Processed files.")                                            #Print number of files that are left after successful processing
+    print()                                                                                                     #Blank line
     print("Data for each page has been extracted and can be found inside the 'Processed Files' directory")      #Print final message
+    print()                                                                                                     #Blank line
   
